@@ -15,4 +15,8 @@ public function index(){
 
 }
 
+public function users(){
+    
+    return view("admin.users");
+
 }

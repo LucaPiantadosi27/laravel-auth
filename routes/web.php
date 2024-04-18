@@ -34,5 +34,18 @@ require __DIR__.'/auth.php';
 
 
 //Rotta pagina Admin
+// Route::get('/admin', [DashboardController::class, 'index'])->middleware(['auth']);
 
-Route::get('/admin', [DashboardController::class, 'index'])->middleware(['auth']);
+
+// Creo un gruppo per gestire le rotte
+Route::middleware(['auth', 'verified'])
+->name('admin.')
+->prefix('admin')
+->group(function () {
+
+    Route::get('/',[DashboardController::class,'index'])->name('index');
+    Route::get('/users', [DashboardController::class,'users'])->name('users');
+    
+}
+
+);
