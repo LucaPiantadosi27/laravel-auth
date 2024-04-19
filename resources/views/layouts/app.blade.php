@@ -27,7 +27,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">   
                        
-                    <img src="https://wallpapercave.com/wp/wp7254801.png" alt="uciha"style="max-height: 70px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Mangekyou_Sharingan_Kakashi.svg" alt="Sharingan"style="max-height: 70px;">
                     
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
