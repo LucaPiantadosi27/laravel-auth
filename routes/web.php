@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -43,9 +44,13 @@ Route::middleware(['auth', 'verified'])
 ->prefix('admin')
 ->group(function () {
 
-    Route::get('/',[DashboardController::class,'index'])->name('index');
-    Route::get('/users', [DashboardController::class,'users'])->name('users');
-    
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
+
+
+    Route::get('/users', [DashboardController::class, 'users'])->name('users');
+
+    Route::resource('posts', PostController::class);
+
 }
 
 );
