@@ -11,13 +11,17 @@
         </h1>
 
         <p class="col-md-8 fs-4">" This is a portfolio where I will showcase all my magical works "</p>
+        <br>
+        <br>
         <a href="https://packagist.org/packages/pacificdev/laravel_9_preset" class="btn btn-primary btn-lg" type="button">Documentation</a>
     </div>
 </div>
 
 <div class="content">
     <div class="container">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora temporibus, dicta nemo aliquam totam nisi deserunt soluta quas voluptatum ab beatae praesentium necessitatibus minus, facilis illum rerum officiis accusamus dolores!</p>
+        <p>
+
+        </p>
     </div>
 </div>
 @endsection
