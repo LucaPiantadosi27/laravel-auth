@@ -24,7 +24,8 @@ class StorePostRequest extends FormRequest
         return [
            'title'=>'unique:posts,title|max:255|required',
            'content'=> 'required',
-            'cover_image' => 'file|max:1024|nullable|mimes:jpg,bmp,png'
+           'cover_image' => 'file|max:1024|nullable|mimes:jpg,bmp,png',
+           'category_id' => 'nullable|exists:categories,id'
         ];
     }
     public function messages(): array
@@ -35,7 +36,9 @@ class StorePostRequest extends FormRequest
         'title. required'=> 'Devi inserire un titolo',
         'content.required' => 'Devi inserire il contenuto',
         'cover_image.mimes' => "Il file deve essere un'immagine",
-        'cover_image.max' => "La dimensione del file non deve superare i 1024 KB"
+        
+        'cover_image.max' => "La dimensione del file non deve superare i 1024 KB",
+        'category_id.exists' => 'Fregato'
         ];
 }
 }

@@ -10,7 +10,7 @@
     
       <h1>{{$post->title}}</h1>
 
-      <small>{{$post->category->title}}</small>
+      <small>{{ $post->category->title }}</small>
     
       <p>
           {{$post->content}}
