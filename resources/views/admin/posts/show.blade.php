@@ -4,28 +4,34 @@
 
 <div class="container py-5">
 
-    <div class="mb-4 text-center">
-        <img src="{{asset('storage/' . $post->cover_image)}}" alt="Copertina immagine">
-      </div>
-    
-      <h1>{{$post->title}}</h1>
+  <div class="mb-4 text-center">
+    <img src="{{asset('storage/' . $post->cover_image)}}" alt="Copertina immagine">
+  </div>
 
-      <small>{{ $post->category->title }}</small>
-    
-      <p>
-          {{$post->content}}
-      </p>
-    
-      <hr>
-      {{-- modifica button --}}
-      <a href="{{route('admin.posts.edit', $post->id)}}" class="btn btn-warning">Modifica</a>
+  <h1>{{$post->title}}</h1>
 
-      {{-- elimina button --}}
-      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Elimina</button>
+  {{-- 
+    Nullsafe operator: possibilità di accedere ad una variabile di un oggetto che non sappiamo se esista o no
+    utilissimo per le relazioni con tabelle che possono anche essere nulle
+  --}}
+  <small>{{ $post->category?->title }}</small>
 
+  <p>
+      {{$post->content}}
+  </p>
 
-<!-- Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <hr>
+
+  <a href="{{route('admin.posts.edit', $post->id)}}" class="btn btn-warning">Modifica</a>
+
+  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Elimina
+  </button>
+
+<!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
 
@@ -35,7 +41,7 @@
         </div>
 
         <div class="modal-body">
-            Sei sicuro di voler eliminare definitivamente il post?
+            Sei sicuro di voler eliminare il post?
         </div>
 
         <div class="modal-footer">
