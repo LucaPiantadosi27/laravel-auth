@@ -13,6 +13,8 @@
     {{-- @dump($user) --}}
 
 
+    <a href="{{route('admin.posts.index')}}" class="btn btn-outline-info">Visualizza tutti i post</a>
+
     <a href="{{route('admin.posts.create')}}" class="btn btn-info">Aggiungi un post</a>
 
 </div>
