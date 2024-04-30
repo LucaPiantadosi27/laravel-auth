@@ -6,7 +6,7 @@
 
     <h1>Tutti i post</h1>
 
-    <table class="table">
+    <table class="table mb-5">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -18,7 +18,7 @@
         </thead>
         <tbody>
 
-
+            
             {{-- @dump($posts) --}}
             @foreach($posts as $post)
             <tr>
@@ -32,6 +32,9 @@
 
         </tbody>
       </table>
+
+
+      <a href="{{route('admin.posts.create')}}" class="btn btn-primary">Aggiungi un post</a>
 
 </div>
 
